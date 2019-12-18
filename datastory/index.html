@@ -106,7 +106,7 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Explore our data</h2>
-          <h3 class="section-subheading text-muted"> This <a href="https://www.dunnhumby.com/careers/engineering/sourcefiles">dataset</a> contains household level transactions over two years from a group of 2,500 households who are frequent shoppers at a retailer. It contains all of each household’s purchases, not just those from a limited number of categories. For certain households, demographic information as well as coupons redemption history are included. The data is collected from households who join the collection progressively.</h3>
+          <h3 class="section-subheading text-muted"> This <a href="https://www.dunnhumby.com/careers/engineering/sourcefiles">dataset</a> contains household level transactions over two years from a group of 2,500 households who are frequent shoppers at a retailer. It contains all of each household’s purchases, not just those from a limited number of categories. For certain households, demographic information as well as coupons redemption history are included. </h3>
         </div>
       </div>
       <div class="row">
@@ -347,19 +347,21 @@
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Demographic of our population</h2>
                 <!--p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p-->
+                
+                
+
+                <p>The data is collected from households who join the collection progressively. To start off with, we show a cumulative plot of the first transaction days of the different households. This shows us the number of households which joined the survey by the day number.</p>
                 <iframe src="/plots/hist_cdf_first_day.html" height="500" width="700" seamless></iframe>
+                <p>As we see, households gradually join the survey, and by Day 117, almost all the households have joined. Hence, for all further analysis, we start our calculations after this day.</p>
+                <p>The dataset also provides demographic information about some households, but not all. We have the demographic data for 880 out of 2500 households. This demographic data is clearly not indicative of the whole population, but we try to see which households are more popular of the ones which provide their data. </p>
                 <iframe src="/plots/heat_demo1.html" height="500" width="700" seamless></iframe>
+
+
                 <iframe src="/plots/heat_demo2.html" height="500" width="700" seamless></iframe>
 
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Threads</li>
-                  <li>Category: Illustration</li>
-                </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Close</button>
               </div>
             </div>
           </div>
@@ -385,17 +387,15 @@
                 <h2 class="text-uppercase">Project Name</h2>
 
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                
+                <p>It is also useful to see what categories of products are most popular in the retail stores that are under consideration. This might affect how coupons are issued and more for the popular products.</p>
                 <iframe src="/plots/pie_dept.html" height="500" width="700" seamless></iframe>
+                <p> We see that 'GROCERY' and 'DRUG GM' are the most popular categories. Now lets get an idea what kind of products these departments sell.</p>
                 <iframe src="/plots/bar_products_dept.html" height="500" width="700" seamless></iframe>
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Explore</li>
-                  <li>Category: Graphic Design</li>
-                </ul>
+                
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Close</button>
               </div>
             </div>
           </div>
@@ -420,17 +420,14 @@
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <iframe src="/plots/pie_coupon_dept.html" height="500" width="700" seamless></iframe>
+                
 
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Finish</li>
-                  <li>Category: Identity</li>
-                </ul>
+                <p>Now that we know which kind of products and departments are most popular, let us move on to the coupons. Coupons are sent to customers as parts of different campaigns. Each coupon is redeemable for some subset of products. Let us now see the number of coupons issued for products grouped department-wise.</p>
+                <iframe src="/plots/pie_coupon_dept.html" height="500" width="700" seamless></iframe>
+                <p>So, we see that larger number of coupons are issued for the more popular departments, which is what we would expect, if the stores wish the coupons to be redeemed more.</p>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Close</button>
               </div>
             </div>
           </div>
