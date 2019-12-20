@@ -263,9 +263,9 @@
 
         <p align = "center"><iframe src="plots/box_score.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-        <p>Well, based on the whiskers of the above box plot, it becomes obvious that there isn't a cluster of 'worst scorers'.That being said, its important counterpart, the cluster of 'top scorers' can be observed.</p>
-        <p>Let's look at the demographic data the same way we did it for the global dataset and hope some patterns will appear.
-           After close inspection, two demographic features stand-out, and not in the same way as before.
+        <p>Well, based on the whiskers of the above box plot, it becomes obvious that there isn't a cluster of 'worst scorers'.
+           That being said, its important counterpart, the cluster of 'top scorers' can be observed.</p>
+        <p>After close inspection of thse 'top scorers', two demographic features stand-out, and not in the same way as before.
            The first is 'Age' (again) and the second is 'Household Size', here's what they look like:</p>
         <p>GRAPH5</p>
         <p align = "center"><iframe src="plots/bar_score_household_size_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
@@ -274,71 +274,118 @@
            using then coupons more often.The pattern breaks for the label '5+',
            it doesn't seem to be due to a lack of robustness (20+ samples per category, using the median score),
            so there should be an organic reason for this, it could be for example that mostly rich families grow such large households,
-           leading to a situation where there are many people to support but so many ressources that using coupons is unecessary...
-           Regardless, having a household size of 4 seems to be a positive predictor of coupon use.</p>
+           leading to a situation where there are many people to support but so many ressources that using coupons is unatractive...
+           Regardless, having a household size of 4 seems to be a positive predictor of coupon use among heavy users.</p>
         <p>GRAPH6</p>
         <p align = "center"><iframe src="plots/bar_score_age_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>For this second bar plot, we see an increase in score with age, with a final explosion for the last age range '55-64'.
            As expected, the lowest in score are the young (19-24), like before, probably for the same reasons (financial dependence,
            lack of experience,...) while the oldest (55-64) are the highest in median score,
-           maybe thanks to their experience and the larger amounts of free time they often have and can apply to this kind of optimizations.
-           Whatever the case, being 55 to 64 years old also is a positive predictor regarding coupon use.</p>
+           maybe thanks to their experience and the larger amounts of free time they often have to apply to this kind of optimizations.
+           Whatever the case, being 55 to 64 years old also is a positive predictor regarding coupon use, when it comes to serious coupon users.</p>
         <p>Now that the link between demographics and coupon use has been established under multiple angles,
-           we let's try and use that link to actually predict coupon use.
+           we'll now see how it can be used to predict coupon use.
            This will allow us to actually establish how deep this connection runs (through model performance)
-           while building useful tools (models).</p>
-        <p>The models we're now going to build will predict whether a user is going to use or not the coupons sent to them.
-           If the model is performant, it could be used to save time, money and paper by allowing companies to predict who's going to just throw
+           while building useful tools.</p>
+        <p>The models to come predict whether a user is going to use or not the coupons sent to them.
+           If the model is performant, it can be used to save time, money and paper by allowing companies to predict who's going to just throw
            away the coupons they receive and/or what kind of coupons are universally ignored.<br>
            PS:<br>
-           *Since all our features are categorical, we'll use random forests.<br>
-           *We could check the type of department the coupon is for instead of the type of commodity but,
-           as you can see below 'DRUG_GM' and 'GROCERIES' cover about 80% of the products,
-           doing a classification at this level wouldn't be very informative when it comes to the coupon type.<br>
-           *We only consider type B and C campaigns because they're the only ones which distributed all the different coupons to each
-           of their participants.</p>
+           *Since all our features are categorical, we use random forests.<br>
+           *We define the type of coupon by the type of commodity it supports.
+            We could use the type of department the coupon is for instead but,
+            as you can see below, 'DRUG_GM' and 'GROCERIES' cover about 80% of the products,
+            doing a classification at this level would then not have been very informative.<br>
+           *We only consider type B and C campaigns because they're the only ones which distributed all the different coupons available
+            to each of their participants.</p>
         <p>GRAPH7</p>
         <p align = "center"><iframe src="plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
-        <p>To reach all these goals, lets build a first model which takes the type of commodity the coupon is for and the demographic data
+        <p>To reach all these goals, we first build a model which takes the type of commodity the coupon is for and the demographic data
            of the household and outputs '0' if no coupon gets used and '1' otherwise.
            As you can see below, using the commodity type to differentiate coupons gives a very varied and clear picture of their use,
-           that being said, the percentage of household using each kind of coupon follows such a clear pattern from one entry to the other
-           that this categorical value might totally overshadow the contribution of the demographic data.</p>
+           the percentage of household using each kind of coupon follows such a clear pattern from one entry to the other
+           that the commodity type alone might totally overshadow the contribution of the demographic data.</p>
         <p>GRAPH8</p>
         <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>The predictions of this first model are around 70% accurate which is decent,
            mainly considering that both its precision and recall are also around 70%.</p>
 
-        <p>Now, to verify whether our fears are warranted, let's build a second model which only takes the commodity type as an input,
-           we keep the same outputs.
+        <p>Now, to verify whether our fears are warranted, we've built a second model which only takes the commodity type as an input,
+           keeping the same outputs.
            After training, probably due to the lowering in variance, our accuracy,precision and recall are all around 74%.So yes, sadly,
            the demographic data brings nothing to the table that the commodity type doesn't, except variance.
-           This is a double edged sword because it also means that we can now train our model on data for which we have no demographic data
-           and an organization that would use such a model wouldn't need to adquire demographic data to use the model.
-           Let's train the model on all the compatible data:
-           As you can see below, the plotting of the percentage of coupon users per commodity type is smoother:</p>
+           This is a double edged sword because it also means that we can now train our model on clients for which we have no demographic data
+           meaning that an organization that would use such a model wouldn't need to adquire demographic data to use the model.
+           This is what we get after training the model on all the compatible data:<br>
+           PS: As you can see below, the plotting of the percentage of coupon users per commodity type is smoother:</p>
         <p>GRAPH9</p>
-        <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
+        <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="60%" seamless></iframe></p>
         <p>Sadly, even though we have more samples, the accuracy, precision and recall remain about the same.
-           Now that we have such a decent model, let's predict for which commodity types coupons should and shouldn't be printed
+           Now that we have such a decent model, we can predict for which commodity types coupons should and shouldn't be printed
            ('0' for 'do not print' '1' for 'print'):</p>
         <p>GRAPH10</p>
-        <p align = "center"><iframe src="plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
+        <p align = "center"><iframe src="plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="60%" seamless></iframe></p>
         <p>If we were to follow the advice of our classifier, about 40% of the coupons would be discarded!
-           In our dataset, around 80% of those coupons were never used by their owners against 60% of the ones to keep,
+           In our dataset, around 80% of those coupons were never used by their owners against 40% of the ones to keep,
            so the advice makes sense.<br>PS: For reference, around 48% of all coupons are estimated to be used.</p>
         <p>Now, we still have a last question to answer: 'How predictive the demographic data really is?'
-           Let's build a last model to figure that out, let's just use the demographic data as input and assign label '1' if a level 'thr' of
-           discount has been applied by the ohusehold and '0' otherwise.'thr' (the threshold) is there and chosen in such a way that we get a
+           We've built a last model to figure that out, it just uses the demographic data as input and assigns label '1'
+           if a threshold 'thr' (about 42 dollars) of discount has been reached and '0' otherwise.
+           The threshold is chosen in such a way that we get a
            balanced amount of '0' and '1' labels (to get a decent precision and recall).
-           Once the model trained, we obtain a precion,recall and accuracy of about 58%, it's barely better than random but not totally,
+           After cross-validation, we obtain a precion,recall and accuracy of about 58%, it's barely better than random but not totally,
            exposing the existing (even if weak) predictive power apported by the demographic data while making clear why it was totally
            overshadowed by the one of the commodity type.</p>
         <p>In conclusion, the demographic data is somewhat predictive of coupon use, but collinearily and way more weakly than the commodity type.
            It's then not a good choice to use the demographic data as a predictor of coupon use,
-           focusing on the coupon type is way more productive and actually way less restrictive (less data to collect and no privacy to breach).</p>
+           focusing on the coupon type is way more productive and actually way less restrictive
+           (less data to collect and no privacy to breach or at least endanger).</p>
     </div>
   </section>
+
+  <!-- Team -->
+  <section class="bg-light page-section" id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"><font color="#eea3f3">Pink</font> fluffy bunnies team</h2>
+          <h3 class="section-subheading text-muted">    </h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="img/team/Dhruti_Shah.jpg" alt="">
+            <h4>Dhruti Shah</h4>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="img/team/Alexandre_Reynaud.jpg" alt="">
+            <h4>Alexandre Reynaud</h4>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="img/team/Alexandre_Cadillon.jpg" alt="">
+            <h4>Alexandre Cadillon</h4>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="img/team/Eleonora_Rocchi.jpg" alt="">
+            <h4>Eleonora Rocchi</h4>
+          </div>
+        </div>
+      </div>
+      <!--div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+        </div>
+    </div-->
+    </div>
+  </section>
+
 
   <!-- Team -->
   <section class="bg-light page-section" id="team">
