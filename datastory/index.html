@@ -62,51 +62,13 @@
     </div>
   </header>
 
-  <!-- Services -->
-  <!--section class="page-section" id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-      </div>
-    </div>
-</section-->
-
   <!-- Portfolio Grid -->
   <section class="bg-light page-section" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Explore our data</h2>
-          <h3 class="section-subheading text-muted"> This <a href="https://www.dunnhumby.com/careers/engineering/sourcefiles">dataset</a> contains household level transactions over two years from a group of 2,500 households who are frequent shoppers at a retailer. It contains all of each household’s purchases, not just those from a limited number of categories. For certain households, demographic information as well as coupons redemption history are included. </h3>
+          <h3 class="section-subheading text-muted"> The <a href="https://www.dunnhumby.com/careers/engineering/sourcefiles"> Dunnhumby dataset</a> contains household level transactions over two years from a group of 2,500 households who are frequent shoppers at a retailer. It contains all of each household’s purchases, not just those from a limited number of categories. For certain households, demographic information as well as coupons redemption history are included. </h3>
         </div>
       </div>
       <div class="row">
@@ -198,44 +160,51 @@
   <section class="page-section" id="about1">
     <div class="col-lg-10 container">
     <h2>Campaign success</h2>
-    <p>The first case in which we can this newfound coupon data is to analyse campaign success. After all, coupons are issued as part of a campaign so it's only natural to study them together. <br>
-      Campaign success is derived as the sum of the <i>estimated sales increase</i> of every coupon transaction associated to the campaign.</p>
+    <p> We first analyze the effects of advertising by campaign. In the Dunnhumby dataset, coupons are issued as part of a campaign, so it's only natural to study them together. <br>
+      In order to define which campaign has been successful we will use the concept of score defined above.
+      Then, the success of a particular campaign is derived as the sum of the 'sale increase' score of every coupon transaction associated to that campaign.</p>
 
     <p align = "center"><iframe src="plots/bar_estimated_sales_increase_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>Three campaigns really stand out when it comes to their <i>total estimated sales increase</i>: 8, 13 and 18. While most campaigns range around hundreds of dollars, these three campaign had an <i>estimated sales increase</i> of thousands of dollars.</p>
+    <p>Three campaigns really stand out when it comes to their total 'sale increase' score: 8, 13 and 18.
+        While most campaigns range around hundreds of dollars, these three campaign had a 'sale increase'
+        score of thousands of dollars.</p>
 
+
+    <p>If we obseerve the number of coupons redeemed over time by campaign, we can see that these three campaigns are clearly dominat.</p>
     <p align = "center"><iframe src="plots/plot_coupon_redemption_over_time_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>When look at the number of coupons redeemed over time, these three campaigns are really dominant.</p>
+    <p>We will now try to analyze campaigns using different criterias in order to assess what makes a campaign successfull.</p>
 
-    <p>The following analysis tries to shed some light on why these three particular campaigns were so successful.</p>
+    <p>First, we look at the duration of these campaigns. It doesn't seem to be related to their success. As a matter of fact, campaign 15 had the longest campaign duration by far, but had an 'sale increase' score close to zero.</p>
 
     <p align = "center"><iframe src="plots/bar_campaign_duration.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>If we look at the duration of these campaigns, it doesn't seem to be related to their success. As a matter of fact, campaign 15 had the longest campaign duration by far, but had an estimated sales increase close to zero.</p>
-
-    <p align = "center"><iframe src="plots/bar_coupons_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
-
-    <p>The number of coupons printed is already more interesting as the three top campaigns are the only ones with over 200 coupons. Still, campaigns 26 and 30 are not far behind with 181 coupons but had an <i>estimated sales increase</i> of $121 and $264 respectively.<br>
+    <p>The number of coupons printed is already more interesting as the three top campaigns are the only ones with over 200 coupons. Still, campaigns 26 and 30 are not far behind with 181 coupons but had an 'sale increase' score of $121 and $264 respectively.<br>
       The total number of coupons seems to hold some importance but is not the most determinant aspect.
 
-    <p align = "center"><iframe src="plots/bar_families_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
+
+    <p align = "center"><iframe src="plots/bar_coupons_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
     <p>When we look at the number of families that actively participated (by at least redeeming one coupon) in the three top campaigns, we notice an unusually high number which could be a consequence of their success and not one of the causes.<br>
       However, we also have data on the families targeted during each campaigns and we can clearly make out a pattern as these three campaigns targeted more than 5 times more families than most of the others.</p>
 
+    <p align = "center"><iframe src="plots/bar_families_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
+
+
+
+      <p>Such a big gap might be explained by the fact that these campaigns were distributed at a national level, whereas others were more local.<br>
+        Since the demographic data available doesn't contain any indication on where the households live, counting the number of different stores in which the coupons associated to each campaign were redeemed might be the best way to indicate how spread campaigns were.<br>
+        </p>
+
+      </div>
     <p align = "center"><iframe src="plots/bar_stores_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
+    <p>We can see, campaigns 8, 13 and 18 were in fact targeted on a larger scale than others, with as much as four times as many stores.</p>
 
-    <p>Such a big gap might be explained by the fact that these campaigns were distributed at a national level, whereas others were more local.<br>
-      Since the demographic data available doesn't contain any indication on where the households live, counting the number of different stores in which the coupons associated to each campaign were redeemed might be the best way to indicate how spread campaigns were.<br>
-      And as we can see, campaigns 8, 13 and 18 were in fact targeted on a larger scale than others, with as much as four times as many stores.</p>
-
-    </div>
   </section>
   <section class="bg-light page-section" id="about2">
     <div class="col-lg-10 container">
-        <h2> </h2>
+        <h2> Relations between coupons usage and demographic</h2>
         <span>
         <p>The effect of coupons on sales can be studied from multiple angles providing each their own insights.
            A  second approach would be to analyze whether demographics play a role when it comes to the effectiveness of the coupons.
@@ -267,7 +236,7 @@
            That being said, its important counterpart, the cluster of 'top scorers' can be observed.</p>
         <p>After close inspection of thse 'top scorers', two demographic features stand-out, and not in the same way as before.
            The first is 'Age' (again) and the second is 'Household Size', here's what they look like:</p>
-        <p>GRAPH5</p>
+
         <p align = "center"><iframe src="plots/bar_score_household_size_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>This plot shows us that coupon use increases with household size, exploding for a size of 4, which makes sense if we consider that,
            the more people you to take care of,  to more economically burdened and consequently cautious you might become,
@@ -276,7 +245,7 @@
            so there should be an organic reason for this, it could be for example that mostly rich families grow such large households,
            leading to a situation where there are many people to support but so many ressources that using coupons is unatractive...
            Regardless, having a household size of 4 seems to be a positive predictor of coupon use among heavy users.</p>
-        <p>GRAPH6</p>
+
         <p align = "center"><iframe src="plots/bar_score_age_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>For this second bar plot, we see an increase in score with age, with a final explosion for the last age range '55-64'.
            As expected, the lowest in score are the young (19-24), like before, probably for the same reasons (financial dependence,
@@ -298,14 +267,12 @@
             doing a classification at this level would then not have been very informative.<br>
            *We only consider type B and C campaigns because they're the only ones which distributed all the different coupons available
             to each of their participants.</p>
-        <p>GRAPH7</p>
         <p align = "center"><iframe src="plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>To reach all these goals, we first build a model which takes the type of commodity the coupon is for and the demographic data
            of the household and outputs '0' if no coupon gets used and '1' otherwise.
            As you can see below, using the commodity type to differentiate coupons gives a very varied and clear picture of their use,
            the percentage of household using each kind of coupon follows such a clear pattern from one entry to the other
            that the commodity type alone might totally overshadow the contribution of the demographic data.</p>
-        <p>GRAPH8</p>
         <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>The predictions of this first model are around 70% accurate which is decent,
            mainly considering that both its precision and recall are also around 70%.</p>
@@ -318,13 +285,11 @@
            meaning that an organization that would use such a model wouldn't need to adquire demographic data to use the model.
            This is what we get after training the model on all the compatible data:<br>
            PS: As you can see below, the plotting of the percentage of coupon users per commodity type is smoother:</p>
-        <p>GRAPH9</p>
-        <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="60%" seamless></iframe></p>
+        <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>Sadly, even though we have more samples, the accuracy, precision and recall remain about the same.
            Now that we have such a decent model, we can predict for which commodity types coupons should and shouldn't be printed
            ('0' for 'do not print' '1' for 'print'):</p>
-        <p>GRAPH10</p>
-        <p align = "center"><iframe src="plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="60%" seamless></iframe></p>
+        <p align = "center"><iframe src="plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
         <p>If we were to follow the advice of our classifier, about 40% of the coupons would be discarded!
            In our dataset, around 80% of those coupons were never used by their owners against 40% of the ones to keep,
            so the advice makes sense.<br>PS: For reference, around 48% of all coupons are estimated to be used.</p>
@@ -340,49 +305,6 @@
            It's then not a good choice to use the demographic data as a predictor of coupon use,
            focusing on the coupon type is way more productive and actually way less restrictive
            (less data to collect and no privacy to breach or at least endanger).</p>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section class="bg-light page-section" id="team">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase"><font color="#eea3f3">Pink</font> fluffy bunnies team</h2>
-          <h3 class="section-subheading text-muted">    </h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/Dhruti_Shah.jpg" alt="">
-            <h4>Dhruti Shah</h4>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/Alexandre_Reynaud.jpg" alt="">
-            <h4>Alexandre Reynaud</h4>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/Alexandre_Cadillon.jpg" alt="">
-            <h4>Alexandre Cadillon</h4>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/Eleonora_Rocchi.jpg" alt="">
-            <h4>Eleonora Rocchi</h4>
-          </div>
-        </div>
-      </div>
-      <!--div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-        </div>
-    </div-->
     </div>
   </section>
 
