@@ -320,7 +320,7 @@
            that being said, the percentage of household using each kind of coupon follows such a clear pattern from one entry to the other
            that this categorical value might totally overshadow the contribution of the demographic data.</p>
         <p>GRAPH8</p>
-        <p align = "center"><iframe src="/plots/bar_coupon_users_per_commodity.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="/plots/bar_coupon_users_per_commodity.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
         <p>The predictions of this first model are around 70% accurate which is decent,
            mainly considering that both its precision and recall are also around 70%.</p>
 
@@ -333,12 +333,12 @@
            Let's train the model on all the compatible data:
            As you can see below, the plotting of the percentage of coupon users per commodity type is smoother:</p>
         <p>GRAPH9</p>
-        <p align = "center"><iframe src="/plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="/plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
         <p>Sadly, even though we have more samples, the accuracy, precision and recall remain about the same.
            Now that we have such a decent model, let's predict for which commodity types coupons should and shouldn't be printed
            ('0' for 'do not print' '1' for 'print'):</p>
         <p>GRAPH10</p>
-        <p align = "center"><iframe src="/plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="/plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
         <p>If we were to follow the advice of our classifier, about 40% of the coupons would not be printed!</p>
         <p>Now, we still have a last question to answer: 'How predictive the demographic data really is?'
            Let's build a last model to figure that out, let's just use the demographic data as input and assign label '1' if a level 'thr' of
