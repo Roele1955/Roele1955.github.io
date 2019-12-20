@@ -322,7 +322,9 @@
            ('0' for 'do not print' '1' for 'print'):</p>
         <p>GRAPH10</p>
         <p align = "center"><iframe src="plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
-        <p>If we were to follow the advice of our classifier, about 40% of the coupons would not be printed!</p>
+        <p>If we were to follow the advice of our classifier, about 40% of the coupons would be discarded!
+           In our dataset, around 80% of those coupons were never used by their owners against 60% of the ones to keep,
+           so the advice makes sense.<br>PS: For reference, around 48% of all coupons are estimated to be used.</p>
         <p>Now, we still have a last question to answer: 'How predictive the demographic data really is?'
            Let's build a last model to figure that out, let's just use the demographic data as input and assign label '1' if a level 'thr' of
            discount has been applied by the ohusehold and '0' otherwise.'thr' (the threshold) is there and chosen in such a way that we get a
