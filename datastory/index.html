@@ -181,34 +181,17 @@
             the retailer that compensate the loss of profit in the first shop. <br>
             More in general, we want to highlight the difference of purchase before and after a coupon redemption.
         </p>
-
+        <p align="center">
+            <img class="mx-auto" src="img/score.jpg" alt="" width="450" height="300">
+        </p>
         <p>
-            We define the <b><u> sale increase </u></b> score as shown below.
+            We define the <b><u> sale increase </u></b> score as shown above.
             For each family that use a particular discount we compare the average expense on
             the product before and after the coupon redemption. Then, we define the <b><u> sale increase</u></b> by day
             as the difference between those two values multiplied by the number of days between the coupon
             redemption and the last purchase. <br>
         </p>
 
-        <p align="center">
-            <img class="mx-auto" src="img/score.jpg" alt="" width="450" height="300">
-        </p>
-
-        <p>
-
-
-        </p>
-
-        <p> The transaction data holds precious information about coupons, but it is not directly available. The first step was identifying the exact transactions in which coupons were used. For that, we crossed the coupon redemption table with some of the attributes in the transaction table, such as: </p>
-          <ul style="none">
-            <li> the household that made the transaction</li>
-            <li> the day of the transaction</li>
-            <li> the product bought</li>
-            <li> whether any discount was applied</li>
-          </ul>
-          <p> Once the coupon transactions were identified, it was time to estimate the success of those coupon transactions. We decided to use a statistic that didn't only take into account the sales during the campaign, but also any long-lasting effect on the consumption of the products redeemed by the household. </p>
-          <p> So, we computed the "estimated total sales increase" as the difference between the daily average sales before and after the coupon was used, multiplied by the number of days from the day the coupon was used until the end of the survey. </p>
-          <p> This statistic was computed for every coupon transaction, so the daily averages were only computed for the product and the household in that particular coupon transaction. </p>
       </font>
     </div>
   </section>
