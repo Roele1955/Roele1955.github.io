@@ -160,7 +160,7 @@
   <section class="bg-dark page-section" id="about">
     <div class="col-lg-10 container">
       <font color="#F8F2F9">
-        <h2> How coupons impact sales? </h2>
+        <h2> How do coupons impact sales? </h2>
         <p>
             Our dataset contains information about shopping history for a subset of our customers.
             We will try to analyze how coupons are used by families and how they change shopping habits.
@@ -198,35 +198,38 @@
   <section class="page-section" id="about1">
     <div class="col-lg-10 container">
     <h2>Campaign success</h2>
-    <p>Campaign success is derived as the sum of the "estimated sales increase" of every coupon transaction associated to the campaign.</p>
+    <p>The first case in which we can this newfound coupon data is to analyse campaign success. After all, coupons are issued as part of a campaign so it's only natural to study them together. <br>
+      Campaign success is derived as the sum of the <i>estimated sales increase</i> of every coupon transaction associated to the campaign.</p>
 
     <p align = "center"><iframe src="plots/bar_estimated_sales_increase_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>Three campaigns stand out: 8, 13 and 18.</p>
-
-    <p align = "center"><iframe src="plots/bar_campaign_duration.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
-
-    <p>When look at the number of coupons redeemed over time, these three camapigns are clearly observable.</p>
-
-    <p>The following analysis tries to shed some light on why these three particular campaigns were so successful.</p>
+    <p>Three campaigns really stand out when it comes to their <i>total estimated sales increase</i>: 8, 13 and 18. While most campaigns range around hundreds of dollars, these three campaign had an <i>estimated sales increase</i> of thousands of dollars.</p>
 
     <p align = "center"><iframe src="plots/plot_coupon_redemption_over_time_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>The duration of these campaigns is not related to their success. As a matter of fact, campaign 15 had the longest campaign duartion by far, but had an estimated sales increase close to zero.</p>
+    <p>When look at the number of coupons redeemed over time, these three campaigns are really dominant.</p>
+
+    <p>The following analysis tries to shed some light on why these three particular campaigns were so successful.</p>
+
+    <p align = "center"><iframe src="plots/bar_campaign_duration.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
+
+    <p>If we look at the duration of these campaigns, it doesn't seem to be related to their success. As a matter of fact, campaign 15 had the longest campaign duration by far, but had an estimated sales increase close to zero.</p>
 
     <p align = "center"><iframe src="plots/bar_coupons_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>One might think that these campaigns had a higher number of coupons than others. As we see they did, but also did campaigns 26 and 30 and they were not nearly as successful.</p>
+    <p>The number of coupons printed is already more interesting as the three top campaigns are the only ones with over 200 coupons. Still, campaigns 26 and 30 are not far behind with 181 coupons but had an <i>estimated sales increase</i> of $121 and $264 respectively.<br>
+      The total number of coupons seems to hold some importance but is not the most determinant aspect.
 
     <p align = "center"><iframe src="plots/bar_families_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>However, when we look at the number of families that received these campaigns and at the number of families that participated in them (by at least redeeming one coupon), they really stand out.</p>
+    <p>When we look at the number of families that actively participated (by at least redeeming one coupon) in the three top campaigns, we notice an unusually high number which could be a consequence of their success and not one of the causes.<br>
+      However, we also have data on the families targeted during each campaigns and we can clearly make out a pattern as these three campaigns targeted more than 5 times more families than most of the others.</p>
 
     <p align = "center"><iframe src="plots/bar_stores_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="100%" seamless></iframe></p>
 
-    <p>Such a big gap might be explained by the fact that these campaigns were targeted at a national level, wheareas others were targeted locally.</p>
-
-    <p>Since the demographic data available doesn't contain any indication on where the households live, the best way to indicate how spread a campaign was might be to count the number of different stores in which the coupons associated to that campaign were redeemed. And as we can see, campaigns 8, 13 and 18 were in fact targeted on a larger scale than others.</p>
+    <p>Such a big gap might be explained by the fact that these campaigns were distributed at a national level, whereas others were more local.<br>
+      Since the demographic data available doesn't contain any indication on where the households live, counting the number of different stores in which the coupons associated to each campaign were redeemed might be the best way to indicate how spread campaigns were.<br>
+      And as we can see, campaigns 8, 13 and 18 were in fact targeted on a larger scale than others, with as much as four times as many stores.</p>
 
     </div>
   </section>
