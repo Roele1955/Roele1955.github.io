@@ -217,29 +217,29 @@
     <h2>Campaign success</h2>
     <p>Campaign success is derived as the sum of the "estimated sales increase" of every coupon transaction associated to the campaign.</p>
 
-    <p align = "center"><iframe src="plots/bar_estimated_sales_increase_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+    <p align = "center"><iframe src="datastory/plots/bar_estimated_sales_increase_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>Three campaigns stand out: 8, 13 and 18.</p>
 
-    <p align = "center"><iframe src="plots/bar_campaign_duration.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+    <p align = "center"><iframe src="datastory/plots/bar_campaign_duration.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>When look at the number of coupons redeemed over time, these three camapigns are clearly observable.</p>
 
     <p>The following analysis tries to shed some light on why these three particular campaigns were so successful.</p>
 
-    <p align = "center"><iframe src="plots/plot_coupon_redemption_over_time_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+    <p align = "center"><iframe src="datastory/plots/plot_coupon_redemption_over_time_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>The duration of these campaigns is not related to their success. As a matter of fact, campaign 15 had the longest campaign duartion by far, but had an estimated sales increase close to zero.</p>
 
-    <p align = "center"><iframe src="plots/bar_coupons_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+    <p align = "center"><iframe src="datastory/plots/bar_coupons_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>One might think that these campaigns had a higher number of coupons than others. As we see they did, but also did campaigns 26 and 30 and they were not nearly as successful.</p>
 
-    <p align = "center"><iframe src="plots/bar_families_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+    <p align = "center"><iframe src="datastory/plots/bar_families_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>However, when we look at the number of families that received these campaigns and at the number of families that participated in them (by at least redeeming one coupon), they really stand out.</p>
 
-    <p align = "center"><iframe src="plots/bar_stores_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+    <p align = "center"><iframe src="datastory/plots/bar_stores_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>Such a big gap might be explained by the fact that these campaigns were targeted at a national level, wheareas others were targeted locally.</p>
 
@@ -259,7 +259,7 @@
            As to visualize this impact and show its robustness, we decided to plot below the median score for each categorial value they can take:</p>
         <p>GRAPH2</p>
 
-        <p align = "center"><iframe src="plots/bar_med_score_household_comp.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700"></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/bar_med_score_household_comp.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700"></iframe></p>
         <p>As you can see above, single parents have a substantially higher median score that all other household compositions,
            this makes sense as we'd expect them to save money by all means necessary to deal with their often delicate situation.
            Being a single parent seems to positively predict coupon use.
@@ -267,7 +267,7 @@
 
 
         <p>GRAPH3</p>
-        <p align = "center"><iframe src="plots/bar_med_score_age.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/bar_med_score_age.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
         <p>As you can observe, the youngest age range, '19-24' seems have a low median score in comparison to the rest,
            this could be interpreted as young adults not needing or caring about the sort of economic optimization that coupons provide,
            it could be attributed to a lack of experience or a lack of need caused by financial depense of relatives or the state, for example.
@@ -277,13 +277,13 @@
            the first question which comes to mind is: Are there even detached clusters of scorers?</p>
         <p>GRAPH4</p>
 
-        <p align = "center"><iframe src="plots/box_score.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/box_score.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
         <p>Well, based on the whiskers of the above box plot, it looks like we'll have to forget about our 'worst scorers' while saying hello to its more important counterpart, the cluster of 'top scorers'.</p>
         <p>Let's look at the demographic data the same way we did it for the global dataset and hope some patterns will appear.
            After close inspection, two demographic features stand-out, and not in the same way as before.
            The first is 'Age' (again) and the second is 'Household Size', here's what they look like:</p>
         <p>GRAPH5</p>
-        <p align = "center"><iframe src="plots/bar_score_household_size_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/bar_score_household_size_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
         <p>This plot shows us that coupon use increases with household size, exploding for a size of 4, which makes sense if we consider that,
            the more people you to take care of,  to more economically burdened and consequently cautious you might become,
            using then coupons more often.The pattern breaks for the label '5+',
@@ -292,7 +292,7 @@
            leading to a situation where there are many people to support but so many ressources that using coupons is unecessary...
            Regardless, having a household size of 4 seems to be a positive predictor of coupon use.</p>
         <p>GRAPH6</p>
-        <p align = "center"><iframe src="plots/bar_score_age_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/bar_score_age_outliers.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
         <p>For this second bar plot, we see an increase in score with age, with a final explosion for the last age range '55-64'.
            As expected, the lowest in score are the young (19-24), like before, probably for the same reasons (financial dependence,
            lack of experience,...) while the oldest (55-64) are the highest in median score,
@@ -313,14 +313,14 @@
            *We only consider type B and C campaigns because they're the only ones which distributed all the different coupons to each
            of their participants.</p>
         <p>GRAPH7</p>
-        <p align = "center"><iframe src="plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
         <p>To reach all these goals, lets build a first model which takes the type of commodity the coupon is for and the demographic data
            of the household and outputs '0' if no coupon gets used and '1' otherwise.
            As you can see below, using the commodity type to differentiate coupons gives a very varied and clear picture of their use,
            that being said, the percentage of household using each kind of coupon follows such a clear pattern from one entry to the other
            that this categorical value might totally overshadow the contribution of the demographic data.</p>
         <p>GRAPH8</p>
-        <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/bar_coupon_users_per_commodity.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
         <p>The predictions of this first model are around 70% accurate which is decent,
            mainly considering that both its precision and recall are also around 70%.</p>
 
@@ -333,12 +333,12 @@
            Let's train the model on all the compatible data:
            As you can see below, the plotting of the percentage of coupon users per commodity type is smoother:</p>
         <p>GRAPH9</p>
-        <p align = "center"><iframe src="plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/bar_coupon_users_per_commodity_no_demo.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
         <p>Sadly, even though we have more samples, the accuracy, precision and recall remain about the same.
            Now that we have such a decent model, let's predict for which commodity types coupons should and shouldn't be printed
            ('0' for 'do not print' '1' for 'print'):</p>
         <p>GRAPH10</p>
-        <p align = "center"><iframe src="plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
+        <p align = "center"><iframe src="datastory/plots/bar_model_predictions.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="800" width="1200" seamless></iframe></p>
         <p>If we were to follow the advice of our classifier, about 40% of the coupons would not be printed!</p>
         <p>Now, we still have a last question to answer: 'How predictive the demographic data really is?'
            Let's build a last model to figure that out, let's just use the demographic data as input and assign label '1' if a level 'thr' of
@@ -468,7 +468,7 @@
                   <p> First, let’s introduce our customers: <b> frequent buyers </b>. <br> People who often go shopping to our chain of supermarkets and decided to register in our database to obtain some benefits. Those advantages are usually quite diverse and can go from a special discount to loyalty points.</p>
                   <p> Data about shopping history for these people has been collected <b> over 2 years </b>: <b> what</b> they bought, <b> when </b> and in <b> which</b> supermarket. <br> If we take a look at the collected information we can observe that not all the registered families have a complete history, for around half of them we have no information for the first 10 weeks of our survey. <br> This may be due to many reasons: after the survey started, people would need to give the consent to collect their informations and this can create a buffer of time in which people are joining before we register data in fulls wing. <br> The image below show the amount of families active in our survey over the 2 years.</p>
 
-                  <p align = "center"><iframe src="plots/line_active_households.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="900" ></iframe></p>
+                  <p align = "center"><iframe src="datastory/plots/line_active_households.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="900" ></iframe></p>
                   <p> We also notice that some families have not more information after a certain day, probably they stopped to buy in our chain of supermarkets or they decided to not participate anymore in the survey. <br> Note that the final decrease is due to the end of the survey: not all families shop daily, therefore, most of them have not bought anything in the last few days of the survey.</p>
                   <p> Furthermore, some of our customers (around 800) provided their demographic information:
                   <ul style="none">
@@ -479,7 +479,7 @@
                   </ul>
                   </p>
 
-                  <p align = "center"><iframe src="plots/bar_demographic_dist.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+                  <p align = "center"><iframe src="datastory/plots/bar_demographic_dist.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
                   <p> This demographic data is clearly not indicative of the whole population, but we try to see which households are more popular of the ones which provide their data. </p>
               </h6>
@@ -515,12 +515,12 @@
                     Every shop has a general common structure: each shop groups its products in different departments that sell a particular group of items. This division is quite logical: assume you are shopping and you want to buy some fruits, it would be really difficult to look for apples all over a shop. <br>
                     From the department of our supermarkets we can get a general idea of which kind of shop were interested by the survey.
                   </p>
-                  <p align = "center"><iframe src="plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+                  <p align = "center"><iframe src="datastory/plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
                   <p>
                     We see that 'GROCERY' and 'DRUG GM' are the department that contains the largest variety of products. <br>
                     Below you can see which products have greater choice for those departments.
                   </p>
-                  <p align = "center"><iframe src="plots/bar_products_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+                  <p align = "center"><iframe src="datastory/plots/bar_products_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
                 </h6>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
@@ -550,7 +550,7 @@
                 <h2 class="text-uppercase">Coupons</h2>
                 <h6 align="left" style="font-weight:normal">
                   <p>Now that we know which kind of products and departments are most popular, let us move on to the coupons. Coupons are sent to customers as parts of different campaigns. Each coupon is redeemable for some subset of products. Let us now see the number of coupons issued for products grouped department-wise.</p>
-                  <p align = "center"><iframe src="plots/pie_coupon_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless" height="500" width="700"></iframe></p>
+                  <p align = "center"><iframe src="datastory/plots/pie_coupon_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless" height="500" width="700"></iframe></p>
                   <p>So, we see that larger number of coupons are issued for the more popular departments, which is what we would expect, if the stores wish the coupons to be redeemed more.</p>
                 </h6>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
