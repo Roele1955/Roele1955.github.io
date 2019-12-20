@@ -160,8 +160,34 @@
   <section class="bg-dark page-section" id="about">
     <div class="col-lg-10 container">
       <font color="#F8F2F9">
-        <h2>How we estimated the impact of coupons</h2>
-        <p>The transaction data holds precious information about coupons, but it is not directly available. The first step was identifying the exact transactions in which coupons were used. For that, we crossed the coupon redemption table with some of the attributes in the transaction table, such as: </p>
+        <h2> How coupons impact sales? </h2>
+        <p>
+            Our dataset contains information about shopping history for a subset of our customers.
+            We will try to analyze how coupons are used by families and how they change shopping habits.
+            <br>
+            Coupons are usually released as part of some campaign aimed to promote certain products.
+            The advertising has a cost from the point of view of the retailer, therefore it must result
+            in some kind of advantage in sales for the store to be beneficial.
+        <p>
+
+        <p>
+            Measuring the effect of a campaign is a complex problem, many hambiental factor coinfluence customers
+            and it is almost impossible to have an exact impact measure.
+            Therefore, we will restrict our analysis to a particular effect: we are mostly interested in how
+            a coupon redemption impact the shopping habits of the customer.  <br>
+            It often happen we buy a product just out of curiosity because there is a discount,
+            we are naturally attracted by a deal that seems advantageous. Then if we like
+            what we bought we start buying it, then this initial discount resulted in a gain for
+            the retailer that compensate the loss of profit in the first shop. <br>
+            More in general, we want to highlight the difference of purchase before and after a coupon redemption.
+        </p>
+
+        <p>
+
+
+        </p>
+
+        <p> The transaction data holds precious information about coupons, but it is not directly available. The first step was identifying the exact transactions in which coupons were used. For that, we crossed the coupon redemption table with some of the attributes in the transaction table, such as: </p>
           <ul style="none">
             <li> the household that made the transaction</li>
             <li> the day of the transaction</li>
@@ -174,34 +200,34 @@
       </font>
     </div>
   </section>
-  <section class="bg-light page-section" id="about1">
+  <section class="page-section" id="about1">
     <div class="col-lg-10 container">
     <h2>Campaign success</h2>
     <p>Campaign success is derived as the sum of the "estimated sales increase" of every coupon transaction associated to the campaign.</p>
 
-    <iframe src="/plots/bar_estimated_sales_increase_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+    <p align = "center"><iframe src="/plots/bar_estimated_sales_increase_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>Three campaigns stand out: 8, 13 and 18.</p>
 
-    <iframe src="/plots/bar_campaign_duration.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+    <p align = "center"><iframe src="/plots/bar_campaign_duration.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>When look at the number of coupons redeemed over time, these three camapigns are clearly observable.</p>
 
     <p>The following analysis tries to shed some light on why these three particular campaigns were so successful.</p>
 
-    <iframe src="/plots/plot_coupon_redemption_over_time_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+    <p align = "center"><iframe src="/plots/plot_coupon_redemption_over_time_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>The duration of these campaigns is not related to their success. As a matter of fact, campaign 15 had the longest campaign duartion by far, but had an estimated sales increase close to zero.</p>
 
-    <iframe src="/plots/bar_coupons_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+    <p align = "center"><iframe src="/plots/bar_coupons_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>One might think that these campaigns had a higher number of coupons than others. As we see they did, but also did campaigns 26 and 30 and they were not nearly as successful.</p>
 
-    <iframe src="/plots/bar_families_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+    <p align = "center"><iframe src="/plots/bar_families_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>However, when we look at the number of families that received these campaigns and at the number of families that participated in them (by at least redeeming one coupon), they really stand out.</p>
 
-    <iframe src="/plots/bar_stores_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+    <p align = "center"><iframe src="/plots/bar_stores_by_campaign.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
     <p>Such a big gap might be explained by the fact that these campaigns were targeted at a national level, wheareas others were targeted locally.</p>
 
@@ -209,7 +235,7 @@
 
     </div>
   </section>
-  <section class=" page-section" id="about">
+  <section class="bg-light page-section" id="about">
     <div class="col-lg-10 container">
         <h2>ALEX " TODO!!!"</h2>
         <p>Campaign success is derived as the sum of the "estimated sales increase" of every coupon transaction associated to the campaign.</p>
@@ -330,16 +356,17 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-10 mx-auto">
               <div class="modal-body" >
                 <!-- Project Details Go Here -->
-                <h3 class="text-uppercase" align="center">Customer's demographic</h3>
+                <h2 class="text-uppercase" align="center">Customer's demographic</h2>
                 <!--p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p-->
-                <text align="left">
+
+                <h6 align="left" style="font-weight:normal">
                   <p> First, let’s introduce our customers: <b> frequent buyers </b>. <br> People who often go shopping to our chain of supermarkets and decided to register in our database to obtain some benefits. Those advantages are usually quite diverse and can go from a special discount to loyalty points.</p>
                   <p> Data about shopping history for these people has been collected <b> over 2 years </b>: <b> what</b> they bought, <b> when </b> and in <b> which</b> supermarket. <br> If we take a look at the collected information we can observe that not all the registered families have a complete history, for around half of them we have no information for the first 10 weeks of our survey. <br> This may be due to many reasons: after the survey started, people would need to give the consent to collect their informations and this can create a buffer of time in which people are joining before we register data in fulls wing. <br> The image below show the amount of families active in our survey over the 2 years.</p>
 
-                  <iframe src="/plots/line_active_households.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+                  <p align = "center"><iframe src="/plots/line_active_households.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="900" ></iframe></p>
                   <p> We also notice that some families have not more information after a certain day, probably they stopped to buy in our chain of supermarkets or they decided to not participate anymore in the survey. <br> Note that the final decrease is due to the end of the survey: not all families shop daily, therefore, most of them have not bought anything in the last few days of the survey.</p>
                   <p> Furthermore, some of our customers (around 800) provided their demographic information:
                   <ul style="none">
@@ -350,10 +377,10 @@
                   </ul>
                   </p>
 
-                  <iframe src="/plots/heat_demo1.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
+                  <p align = "center"><iframe src="/plots/bar_demographic_dist.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
 
                   <p> This demographic data is clearly not indicative of the whole population, but we try to see which households are more popular of the ones which provide their data. </p>
-                </text>
+              </h6>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
                   Close</button>
@@ -376,18 +403,23 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-10 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h3 class="text-uppercase">Products and Departments</h3>
-
-
-
-                <p>It is also useful to see what categories of products are most popular in the retail stores that are under consideration. This might affect how coupons are issued and more for the popular products.</p>
-                <iframe src="/plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
-                <p> We see that 'GROCERY' and 'DRUG GM' are the most popular categories. Now lets get an idea what kind of products these departments sell.</p>
-                <iframe src="/plots/bar_products_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe>
-
+                <h2 class="text-uppercase">Products</h2>
+                <h6 align="left" style="font-weight:normal">
+                  <p align="center"> We will now analyze which products are sold in our supermarkets.</p>
+                  <p>
+                    Every shop has a general common structure: each shop groups its products in different departments that sell a particular group of items. This division is quite logical: assume you are shopping and you want to buy some fruits, it would be really difficult to look for apples all over a shop. <br>
+                    From the department of our supermarkets we can get a general idea of which kind of shop were interested by the survey.
+                  </p>
+                  <p align = "center"><iframe src="/plots/pie_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+                  <p>
+                    We see that 'GROCERY' and 'DRUG GM' are the department that contains the largest variety of products. <br>
+                    Below you can see which products have greater choice for those departments.
+                  </p>
+                  <p align = "center"><iframe src="/plots/bar_products_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless"  height="500" width="700" seamless></iframe></p>
+                </h6>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
                   Close</button>
@@ -410,15 +442,15 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-10 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h3 class="text-uppercase">Coupons and Campaigns</h3>
-
-
-                <p>Now that we know which kind of products and departments are most popular, let us move on to the coupons. Coupons are sent to customers as parts of different campaigns. Each coupon is redeemable for some subset of products. Let us now see the number of coupons issued for products grouped department-wise.</p>
-                <iframe src="/plots/pie_coupon_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless" height="500" width="700"></iframe>
-                <p>So, we see that larger number of coupons are issued for the more popular departments, which is what we would expect, if the stores wish the coupons to be redeemed more.</p>
+                <h2 class="text-uppercase">Coupons</h2>
+                <h6 align="left" style="font-weight:normal">
+                  <p>Now that we know which kind of products and departments are most popular, let us move on to the coupons. Coupons are sent to customers as parts of different campaigns. Each coupon is redeemable for some subset of products. Let us now see the number of coupons issued for products grouped department-wise.</p>
+                  <p align = "center"><iframe src="/plots/pie_coupon_dept.html" frameborder = '0' scrolling="no" style="border:none;" seamless="seamless" height="500" width="700"></iframe></p>
+                  <p>So, we see that larger number of coupons are issued for the more popular departments, which is what we would expect, if the stores wish the coupons to be redeemed more.</p>
+                </h6>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
                   Close</button>
